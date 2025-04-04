@@ -1,12 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import SavedItem from './components/SavedItem'
 
-const NotFound = () => {
+const Saved = () => {
   return (
     <View>
-      <Text>NotFound</Text>
+    <SavedItem/>
     </View>
   )
 }
 
-export default NotFound
+export default Saved

@@ -5,7 +5,7 @@ import tailwind from 'twrnc';
 import { useRouter } from 'expo-router';
 import { Feather, Ionicons } from '@expo/vector-icons';
 
-const CardUi = ({ item }) => {
+const CardListUi = ({ item,onDelete }) => {
   const router = useRouter();
   
   if (!item) return null;
@@ -13,6 +13,7 @@ const CardUi = ({ item }) => {
   return (
     <TouchableOpacity
       onPress={() => router.push(`/detail/${item.id}`)}
+      onLongPress={()=>onDelete(item.id)}
       style={tailwind`bg-gray-500 p-4 w-72 m-4 rounded-xl shadow-md`}
     >
       <View style={tailwind`flex flex-row`}>
@@ -55,10 +56,14 @@ const CardUi = ({ item }) => {
           <Text style={[tailwind`ml-2 text-sm`, { color: Colors.primary }]}>
             {item.venue || 'TBD'}
           </Text>
+          {/* <TouchableOpacity onPress={() => onDelete(item.id)} >
+          <Ionicons name='trash-outline' size={24} color={Colors.primary} />
+
+          </TouchableOpacity> */}
         </View>
       </View>
     </TouchableOpacity>
   );
 };
 
-export default CardUi;
+export default CardListUi;

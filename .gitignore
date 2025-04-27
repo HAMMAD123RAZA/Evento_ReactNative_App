@@ -15,6 +15,7 @@ env
 *.p12
 *.key
 *.mobileprovision
+task
 
 # Metro
 .metro-health-check*

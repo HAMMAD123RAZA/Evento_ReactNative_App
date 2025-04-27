@@ -3,16 +3,26 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
-import { LinearGradient } from 'expo-linear-gradient'; // Import LinearGradient
-// Prevent the splash screen from auto-hiding before asset loading is complete.
+import { LinearGradient } from 'expo-linear-gradient'; 
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './utils/firebase';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      setUser(authUser);
+    });
+    return unsubscribe;
+  }, []);
 
   useEffect(() => {
     if (loaded) {
@@ -24,7 +34,6 @@ export default function RootLayout() {
     return null;
   }
 
-  // Define a custom theme (optional, for other theme properties)
   const customTheme = {
     ...DefaultTheme,
     colors: {
@@ -38,12 +47,16 @@ export default function RootLayout() {
     <ThemeProvider value={customTheme}>
       <LinearGradient
         colors={[' rgb(13, 2, 54)', 'rgb(109, 99, 99)']} 
-        start={{ x: 0, y: 0 }} // Top-left
-        end={{ x: 1, y: 1 }}   // Bottom-right (135deg equivalent)
-        style={{ flex: 1 }}    // Ensure it fills the screen
+        start={{ x: 0, y: 0 }} 
+        end={{ x: 1, y: 1 }}   
+        style={{ flex: 1 }}   
       >
         <Stack screenOptions={{headerShown:false}}>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false ,contentStyle:{backgroundColor:'transparent'}}} />
+                      <Stack.Screen name="(tabs)" options={{ headerShown: false ,contentStyle:{backgroundColor:'transparent'}}} />
+
+            <Stack.Screen name="user"  />
+
+          
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />

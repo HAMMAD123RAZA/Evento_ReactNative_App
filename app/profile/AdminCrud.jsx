@@ -136,3 +136,4 @@ const AdminCrud = () => {
 };
 
 export default AdminCrud;
+

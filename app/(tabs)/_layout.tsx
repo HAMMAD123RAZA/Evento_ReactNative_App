@@ -82,6 +82,7 @@
 // }
 
 // app/(tabs)/_layout.js
+
 import { Tabs } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Platform, View } from 'react-native';
@@ -91,25 +92,26 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../utils/firebase';
 import Login from '../Login';
 
+
 export default function TabLayout() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
-      setUser(authUser);
-      setIsLoading(false);
-    });
-    return unsubscribe;
-  }, []);
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+  //     setUser(authUser);
+  //     setIsLoading(false);
+  //   });
+  //   return unsubscribe;
+  // }, []);
 
    if (isLoading) {
     return null;
   }
 
-  if (!user) {
-    return <Login />;
-  }
+  // if (!user) {
+  //   return <Login />;
+  // }
 
   return (
     <Tabs

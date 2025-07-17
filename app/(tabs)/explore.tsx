@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import tw from 'twrnc'
 import { Colors } from '@/constants/Colors'
 import { collection, getDocs } from '@firebase/firestore';
-import { db } from '../utils/firebase';
+import { db } from '../../utils/firebase';
 import CardUi from '../components/CardUi';
 import tailwind from 'twrnc';
 import LoadingSpinner from '../components/Loading';

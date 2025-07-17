@@ -16,6 +16,7 @@ env
 *.key
 *.mobileprovision
 task
+test
 
 # Metro
 .metro-health-check*

@@ -5,7 +5,7 @@ import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { addDoc, collection } from '@firebase/firestore';
-import { db } from '../utils/firebase';
+import { db } from '../../utils/firebase';
 import { LinearGradient } from 'expo-linear-gradient';
 import Modal from 'react-native-modal';
 

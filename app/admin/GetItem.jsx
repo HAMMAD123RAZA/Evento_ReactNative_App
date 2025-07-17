@@ -1,7 +1,7 @@
 import { collection, deleteDoc, doc, getDocs } from '@firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { FlatList, RefreshControl, Text, TouchableOpacity, View } from 'react-native'
-import { db } from '../utils/firebase'
+import { db } from '../../utils/firebase'
 import CardListUi from './CardListUi'
 import Modal from 'react-native-modal'
 import tw from 'twrnc'

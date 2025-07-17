@@ -1,6 +1,6 @@
 import { collection, getDocs, query, where } from '@firebase/firestore'
 import React, { useEffect } from 'react'
-import { db } from '../utils/firebase'
+import { db } from '../../utils/firebase'
 import { FlatList } from 'react-native'
 import CardUi from '../components/CardUi'
 

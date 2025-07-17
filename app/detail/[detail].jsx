@@ -5,7 +5,7 @@ import { Dimensions } from 'react-native';
 import tailwind from 'twrnc';
 import { Colors } from '../../constants/Colors';
 import { doc, getDoc } from '@firebase/firestore';
-import { db } from '../utils/firebase';
+import { db } from '../../utils/firebase';
 import { Ionicons } from '@expo/vector-icons';
 import { button, buttonContainer, buttonText } from '../../constants/button'; // Updated import
 import AsyncStorage from '@react-native-async-storage/async-storage';

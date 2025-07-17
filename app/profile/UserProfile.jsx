@@ -5,8 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useRouter } from 'expo-router';
 import { addDoc, collection } from '@firebase/firestore';
-import { db } from '../utils/firebase';
-import {auth} from '../utils/firebase'
+import { db } from '../../utils/firebase';
+import {auth} from '../../utils/firebase'
 
 const UserProfile = () => {
   const authUser = auth.currentUser
@@ -29,7 +29,7 @@ const UserProfile = () => {
         }
 
         if (message.trim() === '') {
-          Alert.alert( 'Message is required 😒!');
+          Alert.alert( 'Message is required ‼️');
           return;
         }
     
@@ -39,7 +39,7 @@ const UserProfile = () => {
     <>
 <Ionicons name="person-circle-outline" size={160} color={Colors.primary} />
 
-<Text style={[tailwind`py-1 text-xl`, { color: Colors.primary }]}>
+<Text style={[tailwind`py-1 text-xl font-bold`, { color: Colors.primary }]}>
 {authUser?.email}</Text>
 
 <View style={tailwind`py-4`}>

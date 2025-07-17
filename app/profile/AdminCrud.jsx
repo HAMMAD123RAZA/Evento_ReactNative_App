@@ -4,7 +4,7 @@ import tailwind from 'twrnc';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useRouter } from 'expo-router';
-import { auth, db } from '../utils/firebase';
+import { auth, db } from '../../utils/firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { FontAwesome } from '@expo/vector-icons';
 

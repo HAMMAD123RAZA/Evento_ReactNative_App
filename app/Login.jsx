@@ -11,7 +11,7 @@ import {
   sendPasswordResetEmail,
   fetchSignInMethodsForEmail
 } from 'firebase/auth';
-import { auth, db } from './utils/firebase';
+import { auth, db } from '../utils/firebase';
 import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
 import Constants from 'expo-constants';

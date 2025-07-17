@@ -17,7 +17,11 @@ const Profile = () => {
       
 <UserProfile/>
 <AdminCrud/>
-
+<View>
+<Text style={tailwind`text-xl py-29 font-bold text-[${Colors.primary}]`}>
+  DEVELOPED BY HAMMAD RAZA 
+</Text>
+</View>
     </ScrollView>
   );
 };

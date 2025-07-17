@@ -32,17 +32,7 @@ const data = [
 ];
 
 const Slider = () => {
-    
-    const renderItem=({item})=>{
-  
-  return (
-      <View key={item.id} style={tailwind`px-3 `} >
-          <Image source={{uri:item.imageUrl}}  style={tailwind`opacity-50 bg-gray-100 rounded-lg`}  height={150} width={Dimensions.get('screen').width-20} />
-      </View>
-  )
-}
-
-const flatListRef = useRef(null);
+    const flatListRef = useRef(null);
 const [currentIndex, setCurrentIndex] = useState(0);
 
 useEffect(() => {
@@ -58,6 +48,17 @@ useEffect(() => {
 
   return () => clearInterval(interval);
 }, [currentIndex]);
+
+    const renderItem=({item})=>{
+  
+  return (
+      <View key={item.id} style={tailwind`px-3 `} >
+          <Image source={{uri:item.imageUrl}}  style={tailwind`opacity-50 bg-gray-100 rounded-lg`}  height={150} width={Dimensions.get('screen').width-20} />
+      </View>
+  )
+}
+
+
 
 return (
 <View>

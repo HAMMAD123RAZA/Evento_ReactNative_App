@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocalSearchParams } from 'expo-router'
 import tailwind from 'twrnc'
 import { collection, getDocs, where ,query} from 'firebase/firestore'
-import {db} from '../utils/firebase'
+import {db} from '../../utils/firebase'
 import CardUi from '../components/CardUi'
 const CatId = () => {
     const [Data, setData] = useState(null)

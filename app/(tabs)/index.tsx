@@ -88,7 +88,7 @@ import Upcoming from '../components/Upcoming'
 import Category from '../components/Category'
 import { Colors } from '@/constants/Colors'
 import { onAuthStateChanged } from 'firebase/auth'
-import { auth } from '../utils/firebase'
+import { auth } from '../../utils/firebase'
 import Login from '../Login'
 import Loading from '../components/Loading'
 

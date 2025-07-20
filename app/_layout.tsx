@@ -45,18 +45,30 @@ export default function RootLayout() {
   return (
 
     <ThemeProvider value={customTheme}>
-      <LinearGradient
-        colors={[' #0d0236', 'rgb(109, 99, 99)']} 
-        start={{ x: 0, y: 0 }} 
-        end={{ x: 1, y: 1 }}   
-        style={{ flex: 1 }}   
-      >
-        <Stack screenOptions={{headerShown:false}}>
-                      <Stack.Screen name="(tabs)" options={{ headerShown: false ,contentStyle:{backgroundColor:'transparent'}}} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-        <StatusBar style="auto" />
-      </LinearGradient>
+<LinearGradient
+  colors={['#0d0236', 'rgb(109, 99, 99)']} // Removed space before #
+  start={{ x: 0, y: 0 }}
+  end={{ x: 1, y: 1 }}
+  style={{
+    flex: 1,
+    position: 'absolute',
+    width: '100%',
+    height: '100%'
+  }}
+>
+  <StatusBar style="light" /> {/* Changed to light for better visibility */}
+  <Stack 
+    screenOptions={{
+      headerShown: false,
+      contentStyle: {
+        backgroundColor: 'transparent' // Ensure stack content is transparent
+      }
+    }}
+  >
+    <Stack.Screen name="(tabs)" />
+    <Stack.Screen name="+not-found" />
+  </Stack>
+</LinearGradient>
     </ThemeProvider>
 
   );
